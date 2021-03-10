@@ -1,0 +1,409 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1046{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Msftedit 5.41.21.2509;}\viewkind4\uc1\pard\sl240\slmult1\lang22\f0\fs20 01\par
+#include <stdio.h>\par
+#include <stdlib.h>\par
+\par
+int main()\par
+\{\par
+    int vet1[10],vet2[10],vet3[10],i;\par
+    printf("ENTRE COM 10 NUMEROS DO PRIMEIRO VETOR");\par
+    for(i=0; i<10; ++i)\par
+    \{\par
+        scanf("%d", &vet1[i]);\par
+    \}\par
+    printf("ENTRE COM 10 NUMEROS DO SEGUNDO VETOR");\par
+    for(i=0; i<10; ++i)\par
+    \{\par
+        scanf("%d", &vet2[i]);\par
+    \}\par
+\par
+    for(i=0; i<10; ++i)\par
+    \{\par
+        vet3[i] = vet1[i] * vet2[i];\par
+    \}\par
+    for(i=0; i<10; ++i)\par
+    \{\par
+        printf("O VETOR RESULTANTE EH %d\\n", vet3[i]);\par
+    \}\par
+\par
+    return 0;\par
+\}\par
+\par
+02\par
+#include <stdio.h>\par
+#include <stdlib.h>\par
+\par
+int main()\par
+\{\par
+    int vet[20],i,a=0;\par
+\par
+    printf("entre com 20 numeros para o vetor: \\n");\par
+    for(i=0; i<20; ++i)\par
+    \{\par
+        scanf("%d\\n", &vet[i]);\par
+    \}\par
+    for(i=0; i<20; ++i)\par
+    \{\par
+        if( (vet[i] % 2) == 0  )\par
+        \{\par
+            a++;\par
+        \}\par
+    \}\par
+\par
+    for(i=0; i<20; ++i)\par
+    \{\par
+        printf("Mostrando vetor: %d\\n", vet[i]);\par
+    \}\par
+\par
+    printf(" O total de vetor partes eh : %d", a);\par
+\par
+    return 0;\par
+\}\par
+\par
+03\par
+\par
+#include <stdio.h>\par
+#include <stdlib.h>\par
+\par
+int main()\par
+\{\par
+    int S[100],I,J,AUX;\par
+\par
+\par
+    for( I = 0 ; I < 100 ; I++)\par
+    \{\par
+        printf("\\n digite o vetor num [%d] = ",I);\par
+        scanf("%d",&S[I]);\par
+    \}\par
+    for( I = 0 ; I < 99 ; I++)\par
+        for( J = I+1 ; J < 100 ; J++)\par
+            if (S[I] > S[J])\par
+            \{\par
+                AUX = S[I] ;\par
+                S[I] = S[J];\par
+                S[J] = AUX;\par
+            \}\par
+            printf("\\n\\n\\n");\par
+    for( I = 0 ; I < 100 ; I++)\par
+        printf("\\n na ordem crescente[%d] = %d ",I,S[I]);\par
+\par
+\par
+return 0;\par
+\}\par
+\par
+04#include <stdio.h>\par
+#include <stdlib.h>\par
+\par
+int main()\par
+\{\par
+    int cartao[13], gabarito[13],vetor[13];\par
+    int quant, numapostador, i,novo;\par
+\par
+    novo = 1;\par
+    printf("Entre com o gabarito da loteria esportiva:");\par
+    for (i=0; i<13; ++i)\par
+    \{\par
+        printf("Entre com a resposta do %d jogo:", i);\par
+        scanf("%d", &gabarito[i]);\par
+    \}\par
+    while(novo == 1)\par
+    \{\par
+\par
+        printf("Entre com o numero do cartao do apostador:");\par
+        scanf("%d", &numapostador);\par
+        printf("Entre com o cart\'e3o da loteria esportiva do apostador:");\par
+\par
+        for (i=0; i<13; ++i)\par
+        \{\par
+            printf("Entre com a resposta do %d\'ba jogo:", i);\par
+            scanf("%d",&cartao[i]);\par
+        \}\par
+        printf("Deseja conferir outro cart\'e3o? Digite 1 para Sim ou 2 para N\'e3o:");\par
+        scanf("%d",&novo);\par
+\par
+    \}\par
+\par
+    quant = 0;\par
+    for (i=0; i<13; ++i)\par
+    \{\par
+        if( cartao[i] == gabarito[i])\par
+        \{\par
+            quant = quant + 1;\par
+        \}\par
+    \}\par
+    printf("O apostador de cart\'e3o numero : %d Fez: %d  pontos",numapostador,quant);\par
+    if(quant == 13)\par
+    \{\par
+        printf("Parab\'e9ns!! Voc\'ea \'e9 um dos Ganhadores!!!!");\par
+    \}\par
+\par
+    return 0;\par
+\}\par
+\par
+05\par
+#include <stdio.h>\par
+#include <stdlib.h>\par
+\par
+int main()\par
+\{\par
+    int vet[20],i,aux;\par
+    printf("Entre com 20 n\'fameros inteiros do primeiro vetor\\n:");\par
+    for(i=0;i<20;++i)\{\par
+    printf("Entre com o %d\'ba numero:", i);\par
+    scanf("%d\\n",&vet[i]);\par
+    \}\par
+    printf("O vetor original \'e9:");\par
+    for (i=0; i<20;++i) \{\par
+    printf("%d\\n", vet[i]);\par
+    \}\par
+    for (i=0;i<10;++i)\{\par
+    aux = vet[i];\par
+    vet[i]=vet[21-i];\par
+    vet[21-i]=aux;\par
+    \}\par
+    printf("O vetor resultante \'e9:");\par
+    for (i=0; i<20;++i) \{\par
+    printf("%d\\n",vet[i]);\par
+    \}\par
+return 0;\par
+\}\par
+06\par
+#include <stdio.h>\par
+#include <stdlib.h>\par
+#include <math.h>\par
+#define tam 50\par
+\par
+int main()\par
+\{\par
+    int i, vet[tam];\par
+    printf("entre com 50 nomeros");\par
+    for (i=0; i<tam; i++)\par
+    \{\par
+        scanf("%d", &vet[i]);\par
+    \}\par
+    vet[i]= pow (-1, rand()) * (rand()%100);\par
+    for (i=0; i<tam; i++)\par
+    \{\par
+        if (vet[i]>0)\par
+            printf("Mostrando positivos %d\\n ", vet[i]);\par
+    \}\par
+    return 0;\par
+\}\par
+07\par
+#include <stdio.h>\par
+#define tamanho 80\par
+\par
+int main() \{\par
+\tab int vet[tamanho];\par
+\tab int menor, i;\par
+    printf("Digite os 80 numeros");\par
+\tab for (i=0;i<tamanho;i++)\{\par
+\tab\tab scanf("%d", &vet[i]);\par
+\tab\}\par
+\tab menor = vet[0];\par
+\tab for (i=1;i<tamanho;i++)\{\par
+\tab\tab if (vet[i]<= menor) \{\par
+\tab\tab\tab menor = vet[i];\par
+\tab\tab\}\par
+\tab\}\par
+\tab for (i=0;i<tamanho;i++) \{\par
+\tab\tab if (vet[i]==menor)\par
+\tab\tab\tab printf("O menor elemento eh %d na posicao %d\\n", menor, i);\par
+\tab\}\par
+\tab return 0;\par
+\}\par
+\par
+08 (obs trocar as varieveis)\par
+#include <stdio.h>\par
+#include <stdlib.h>\par
+\par
+int main()\par
+\{\par
+    int tamanho=30;\par
+\tab int A[tamanho], B[tamanho], i;\par
+\tab printf("digite os 30 numeros do vetor");87\par
+\tab for (i=0;i<tamanho;i++)\{\par
+\tab\tab scanf("%d", &A[i]);\par
+\tab\}\par
+\tab for (i=0;i<tamanho;i++)\{\par
+\tab\tab if (A[i]==0)\par
+\tab\tab\tab B[i]=1;\par
+\tab\tab else\par
+\tab\tab\tab B[i]=A[i];\par
+\tab\}\par
+\tab for (i=0;i<tamanho;i++)\par
+\tab\tab printf("A[%d]=%d\\n", i, A[i]);\par
+\tab for (i=0;i<tamanho;i++)\par
+\tab\tab printf("B[%d]=%d\\n", i, B[i]);\par
+\tab return 0;\par
+\}\par
+\par
+09 analizar\par
+\par
+#include <stdio.h>\par
+#include <stdlib.h>\par
+\par
+int main()\par
+\{\par
+    char g[20],r[20];\par
+    int acertos=0,i;\par
+\par
+    printf("digite a resposta do gabarito\\n");\par
+    for (i=0; i<20; ++i)\par
+    \{\par
+        printf("digite a resposta da %d\'baquestao do gabarito = \\n", i);\par
+        scanf("%s",& g[i]);\par
+\par
+    \}\par
+    printf("Gabarito Recebido n");\par
+\par
+    printf("Digite o gabarito de respostas dos alunos\\n");\par
+\par
+    for (i=0; i<5; i++)\par
+    \{\par
+        printf("digite %d quest\'e3o do aluno \\n", i);\par
+        for (i=0; i<20; i++)\par
+        \{\par
+            scanf("%s",&r[i]);\par
+        \}\par
+    \}\par
+    for (i=0; i<20; i++)\par
+    \{\par
+\par
+        if (r[i]==g[i])\par
+        \{\par
+            acertos = acertos+1;\par
+        \}\par
+    \}\par
+    printf("Voce acertou %d questoes.", acertos);\par
+\par
+    if (acertos >= 12)\par
+    \{\par
+        printf("APROVADO");\par
+    \}\par
+    else\par
+        printf("REPROVADO");\par
+\par
+    return 0;\par
+\par
+10\par
+#include <stdio.h>\par
+#include <stdlib.h>\par
+\par
+int main()\par
+\{\par
+    int x[10];\par
+    int i, num=101, qtde=0,cont=0;\par
+\par
+    while(i<10)\par
+    \{\par
+        for (i=0; i<num; i++)\par
+        \{\par
+            if(num%i==0)\par
+            \{\par
+                qtde = qtde+1;\par
+            \}\par
+        \}\par
+\par
+        if (qtde==2)\par
+        \{\par
+            cont = cont+1;\par
+            x[cont] = num;\par
+        \}\par
+        num = num + 1;\par
+    \}\par
+    for (i=0; i<10; i++)\par
+    \{\par
+        printf("mostrando", x[i]);\par
+    \}\par
+    return 0;\par
+\}\par
+\par
+11\par
+\par
+void sort_vetor (int* v, size_t len)\par
+\{\par
+    int p = 0, i;\par
+\par
+    while(p < (len - 1))\par
+    \{\par
+        i = p + 1;\par
+        while(i < len)\par
+        \{\par
+            if(*(v + p) < *(v + i))\par
+            \{\par
+                int tmp = *(v + p);\par
+                *(v + p) = *(v + i);\par
+                *(v + i) = tmp;\par
+            \}\par
+            i++;\par
+        \}\par
+        p++;\par
+    \}\par
+\}\par
+\par
+int main()\par
+\{\par
+    int v1[10], v2[10], s[20], i = 0;\par
+\par
+    printf("Preencha o vetor 1:\\n");\par
+    for(i = 0; i < 10; i++)\par
+        scanf("%d", v1 + i);\par
+\par
+    printf("\\nPreencha o vetor 2:\\n");\par
+    for(i = 0; i < 10; i++)\par
+        scanf("%d", v2 + i);\par
+\par
+    for(i = 0; i < 10; i++)\par
+    \{\par
+        s[i+10] = v2[i];\par
+        s[i] = v1[i];\par
+    \}\par
+\par
+    i = 0;\par
+\par
+    sort_vetor(s, 20);\par
+\par
+    printf("\\nVetores organizados:\\n");\par
+    while(i < 20)\par
+    \{\par
+        printf("[%02d]   %d\\n", i, s[i]);\par
+        i++;\par
+    \}\par
+    return 0;\par
+\}\par
+\par
+12\par
+#include <stdio.h>\par
+#include <stdlib.h>\par
+#define TAM_MAX 500\par
+\par
+int main ()\par
+\{\par
+    int i;\par
+    int vet1[500], maior, divisao=0;\par
+\par
+    for(i=0; i<TAM_MAX; i++)\par
+    \{\par
+        printf("Digite o valor da posicao [%d]: ", i+1);\par
+        scanf("%d", &vet1[i]);\par
+    \}\par
+\par
+    maior = vet1[0]; // assume que o primeiro \'e9 o maior\par
+\par
+    for(i=0; i<TAM_MAX; i++)\par
+        if (vet1[i] > maior)\par
+            maior = vet1[i];\par
+    printf("\\nO maior elemento %d\\n",maior);\par
+\par
+    for(i=0; i<TAM_MAX; i++)\par
+    \{\par
+        divisao=vet1[i]/maior;\par
+        printf("\\nA divisao de vet1[%d] por %d  = %d   ",vet1[i], maior,divisao);\par
+    \}\par
+    return 0;\par
+\}\par
+\par
+\par
+}
+ 
