@@ -7,7 +7,6 @@ int main()
     int i,j,aux;
     int Vet1[MAX];
     int num;
-    // pegando os numeros
     printf("Digite os numeros do vetor: \n");
     for(i=0; i<MAX; i++){
        scanf("%d",&Vet1[i]);
